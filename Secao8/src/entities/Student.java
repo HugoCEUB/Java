@@ -10,17 +10,11 @@ public class Student {
 	public double finalGrade() {
 		return nota1 + nota2 + nota3;
 	}
-	public double aprovado() {
-		double p = finalGrade();
-			if (p < 60.00) {
-				p = 60 - p;
-				System.out.println("FAILED");
-				System.out.printf("MISSING %.2f POINTS", p);
+	public double missingPoints() {
+			if (finalGrade() < 60.00) {
+				return 60.00 - finalGrade();
 			} else {
-				System.out.println("PASS");
-			}
-
-			// problema, o return se aplica a todos os casos
-		return p;
+				return 0.0;
+		}
 	}
 }
